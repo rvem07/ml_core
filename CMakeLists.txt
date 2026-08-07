@@ -19,6 +19,14 @@ endif()
 
 option(ML_CORE_BUILD_TESTS "Build the ml-core test suite" ON)
 option(ML_CORE_BUILD_BENCHMARKS "Build the ml-core benchmarks" OFF)
+option(ENABLE_ASAN "Build with AddressSanitizer (leak + memory-error checking)" OFF)
+
+if(ENABLE_ASAN)
+    # Applied globally (not just to the test binary) so the library itself
+    # is instrumented too - ASan can only catch bugs in code it compiled.
+    add_compile_options(-fsanitize=address -fno-omit-frame-pointer -g)
+    add_link_options(-fsanitize=address)
+endif()
 
 add_subdirectory(src)
 
