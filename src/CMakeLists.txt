@@ -1,5 +1,6 @@
 add_library(ml_core STATIC
     ml_core.cpp
+    Matrix.cpp
 )
 
 add_library(ml::core ALIAS ml_core)

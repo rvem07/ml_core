@@ -1,8 +1,9 @@
 #pragma once
 
-// Placeholder public header for the ml-core library.
-// No ML code lives here yet — this just establishes the public
-// include path (include/ml/...) and the `ml` namespace.
+// Umbrella public header for the ml-core library. Pulls in the individual
+// component headers so callers can just `#include "ml/core.hpp"`.
+
+#include "ml/Matrix.hpp"
 
 namespace ml {
 
