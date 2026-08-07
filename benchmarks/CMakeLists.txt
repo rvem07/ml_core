@@ -1,3 +1,8 @@
-# Benchmarks placeholder. No benchmark targets or framework are wired up
-# yet — this directory exists to reserve the layout. Enable with
-# -DML_CORE_BUILD_BENCHMARKS=ON once real benchmarks are added here.
+add_executable(ml_core_matmul_benchmark
+    matmul_benchmark.cpp
+)
+
+target_link_libraries(ml_core_matmul_benchmark
+    PRIVATE
+        ml::core
+)
