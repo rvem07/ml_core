@@ -5,6 +5,7 @@ add_executable(ml_core_tests
     test_main.cpp
     test_matrix.cpp
     test_linear_regression.cpp
+    test_kmeans.cpp
 )
 
 target_link_libraries(ml_core_tests
